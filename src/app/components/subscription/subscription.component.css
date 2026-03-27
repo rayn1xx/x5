@@ -1,0 +1,255 @@
+.subscription-section {
+  padding: 60px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.title-icon {
+  font-size: 40px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.subscription-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.subscription-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.subscription-card.popular {
+  border-color: #E31E24;
+  transform: scale(1.02);
+}
+
+.subscription-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(227, 30, 36, 0.15);
+}
+
+.popular-ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  color: #fff;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.sub-header {
+  padding: 30px;
+  background: linear-gradient(135deg, #E31E24 0%, #ff6b6b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sub-emoji {
+  font-size: 60px;
+}
+
+.sub-discount {
+  background: #fff;
+  color: #E31E24;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sub-body {
+  padding: 30px;
+}
+
+.sub-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.sub-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.sub-price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.price-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: #E31E24;
+}
+
+.price-period {
+  font-size: 16px;
+  color: #999;
+}
+
+.sub-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.feature-check {
+  width: 22px;
+  height: 22px;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  color: #333;
+  font-weight: 500;
+}
+
+.sub-footer {
+  padding: 24px 30px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.subscribe-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  border: none;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(227, 30, 36, 0.4);
+}
+
+.sub-note {
+  font-size: 12px;
+  color: #999;
+  margin: 12px 0 0 0;
+}
+
+.subscription-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 40px;
+  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  border-radius: 24px;
+}
+
+.benefit-item {
+  text-align: center;
+}
+
+.benefit-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.benefit-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px 0;
+}
+
+.benefit-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 28px;
+  }
+
+  .subscription-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subscription-card.popular {
+    transform: none;
+  }
+
+  .subscription-card.popular:hover {
+    transform: translateY(-8px);
+  }
+
+  .subscription-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 24px;
+  }
+}

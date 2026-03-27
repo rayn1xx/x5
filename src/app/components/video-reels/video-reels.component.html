@@ -1,0 +1,90 @@
+<section class="video-reels-section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-icon">🎬</span>
+      Вдохновляйся и заказывай
+    </h2>
+    <p class="section-subtitle">Смотри видео и добавляй готовые наборы в корзину в один клик</p>
+  </div>
+
+  <div class="reels-container">
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow prev" (click)="prevVideo()">
+      <span>◀</span>
+    </button>
+
+    <!-- Main Video Card -->
+    <div class="reel-card" *ngIf="currentVideo">
+      <div class="video-placeholder" (click)="togglePlay()">
+        <div class="video-emoji">{{ currentVideo.thumbnail }}</div>
+        <div class="play-overlay" *ngIf="!isPlaying">
+          <div class="play-button">▶</div>
+        </div>
+        <div class="video-progress" *ngIf="isPlaying"></div>
+      </div>
+
+      <!-- Video Info Overlay -->
+      <div class="video-info">
+        <div class="video-header">
+          <div class="author-info">
+            <div class="author-avatar">👨‍🍳</div>
+            <div class="author-details">
+              <span class="author-name">{{ currentVideo.author }}</span>
+              <span class="follow-btn">Подписаться</span>
+            </div>
+          </div>
+          <button class="like-btn">
+            <span class="like-icon">❤️</span>
+            <span class="like-count">{{ currentVideo.views }}</span>
+          </button>
+        </div>
+
+        <div class="video-content">
+          <h3 class="video-title">{{ currentVideo.title }}</h3>
+          <p class="video-description">{{ currentVideo.description }}</p>
+          <div class="video-meta">
+            <span class="duration">⏱ {{ currentVideo.duration }}</span>
+            <span class="scenario-icon">{{ getScenarioIcon(currentVideo.scenario) }}</span>
+          </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section" *ngIf="currentComboSet">
+          <div class="combo-preview">
+            <span class="combo-emoji">{{ currentComboSet.image }}</span>
+            <div class="combo-details">
+              <span class="combo-name">{{ currentComboSet.name }}</span>
+              <div class="combo-price">
+                <span class="price-current">{{ currentComboSet.price }} ₽</span>
+                <span class="price-old">{{ currentComboSet.oldPrice }} ₽</span>
+                <span class="discount-badge">-{{ currentComboSet.discount }}%</span>
+              </div>
+            </div>
+          </div>
+          <button class="add-to-cart-btn" (click)="addToCart()">
+            <span class="btn-icon">🛒</span>
+            <span>Добавить в корзину</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow next" (click)="nextVideo()">
+      <span>▶</span>
+    </button>
+  </div>
+
+  <!-- Thumbnails Navigation -->
+  <div class="thumbnails-nav">
+    <div
+      class="thumbnail-item"
+      *ngFor="let video of videoReels; let i = index"
+      [class.active]="i === currentIndex"
+      (click)="goToVideo(i)"
+    >
+      <span class="thumbnail-emoji">{{ video.thumbnail }}</span>
+      <div class="thumbnail-indicator" *ngIf="i === currentIndex"></div>
+    </div>
+  </div>
+</section>

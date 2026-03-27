@@ -1,0 +1,54 @@
+<section class="combo-section" id="combos">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-icon">🔥</span>
+      Популярные комбо-наборы
+    </h2>
+    <p class="section-subtitle">Выгодные наборы блюд со скидкой до 30%</p>
+  </div>
+
+  <div class="combo-carousel">
+    <div class="combo-card" *ngFor="let combo of comboSets">
+      <div class="combo-header">
+        <span class="combo-emoji">{{ combo.image }}</span>
+        <div class="combo-badges">
+          <span class="discount-tag">-{{ combo.discount }}%</span>
+        </div>
+      </div>
+
+      <div class="combo-body">
+        <h3 class="combo-name">{{ combo.name }}</h3>
+        <p class="combo-desc">{{ combo.description }}</p>
+
+        <div class="combo-stats">
+          <div class="stat-item">
+            <span class="stat-icon">🍽️</span>
+            <span class="stat-value">{{ getTotalProducts(combo) }} блюда</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon">💰</span>
+            <span class="stat-value save">Экономия {{ getTotalSavings(combo) }} ₽</span>
+          </div>
+        </div>
+
+        <div class="combo-products">
+          <div class="product-chip" *ngFor="let product of combo.products">
+            <span class="chip-emoji">{{ product.image }}</span>
+            <span class="chip-name">{{ product.name }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="combo-footer">
+        <div class="price-info">
+          <span class="final-price">{{ combo.price }} ₽</span>
+          <span class="original-price">{{ combo.oldPrice }} ₽</span>
+        </div>
+        <button class="buy-btn" (click)="addToCart(combo)">
+          <span>В корзину</span>
+          <span class="arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

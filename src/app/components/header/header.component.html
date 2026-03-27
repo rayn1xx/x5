@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="header-container">
+    <div class="logo-section">
+      <div class="logo">
+        <span class="logo-x5">X5</span>
+        <span class="logo-ready">Ready</span>
+      </div>
+      <span class="logo-divider">|</span>
+      <span class="food-ru">food.ru</span>
+    </div>
+
+    <nav class="navigation">
+      <a href="#" class="nav-link active">Главная</a>
+      <a href="#combos" class="nav-link">Комбо-наборы</a>
+      <a href="#subscription" class="nav-link">Подписка</a>
+      <a href="#ready" class="nav-link">X5 Ready</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" title="Избранное">
+        <span class="icon">❤️</span>
+      </button>
+      <button class="icon-btn" title="Профиль">
+        <span class="icon">👤</span>
+      </button>
+      <button class="cart-btn" (click)="toggleCart()">
+        <span class="icon">🛒</span>
+        <span class="cart-count" *ngIf="getCartCount() > 0">{{ getCartCount() }}</span>
+        <span class="cart-text">Корзина</span>
+      </button>
+    </div>
+  </div>
+</header>

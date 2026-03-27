@@ -1,0 +1,136 @@
+<div class="modal-overlay" *ngIf="isOpen" (click)="close()"></div>
+
+<div class="checkout-modal" *ngIf="isOpen" [class.show]="isOpen">
+  <div class="modal-header">
+    <h2 class="modal-title">Оформление заказа</h2>
+    <button class="modal-close" (click)="close()">
+      <span>✕</span>
+    </button>
+  </div>
+
+  <div class="modal-progress">
+    <div class="progress-step" [class.active]="step >= 1" [class.completed]="step > 1">
+      <div class="step-indicator">1</div>
+      <span class="step-label">Доставка</span>
+    </div>
+    <div class="progress-line" [class.completed]="step > 1"></div>
+    <div class="progress-step" [class.active]="step >= 2" [class.completed]="step > 2">
+      <div class="step-indicator">2</div>
+      <span class="step-label">Оплата</span>
+    </div>
+    <div class="progress-line" [class.completed]="step > 2"></div>
+    <div class="progress-step" [class.active]="step >= 3">
+      <div class="step-indicator">3</div>
+      <span class="step-label">Подтверждение</span>
+    </div>
+  </div>
+
+  <div class="modal-body">
+    <!-- Step 1: Delivery -->
+    <div class="step-content" *ngIf="step === 1">
+      <h3 class="step-title">📍 Адрес доставки</h3>
+      <div class="form-group">
+        <label>Город</label>
+        <select class="form-select">
+          <option>Москва</option>
+          <option>Санкт-Петербург</option>
+          <option>Казань</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Улица</label>
+        <input type="text" class="form-input" placeholder="ул. Пушкина, д. 10">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Подъезд</label>
+          <input type="text" class="form-input" placeholder="1">
+        </div>
+        <div class="form-group">
+          <label>Этаж</label>
+          <input type="text" class="form-input" placeholder="5">
+        </div>
+        <div class="form-group">
+          <label>Код домофона</label>
+          <input type="text" class="form-input" placeholder="1234">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Время доставки</label>
+        <div class="time-slots">
+          <button class="time-slot">30-45 мин</button>
+          <button class="time-slot">12:00 - 14:00</button>
+          <button class="time-slot">18:00 - 20:00</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2: Payment -->
+    <div class="step-content" *ngIf="step === 2">
+      <h3 class="step-title">💳 Способ оплаты</h3>
+      <div class="payment-methods">
+        <label class="payment-method">
+          <input type="radio" name="payment" checked>
+          <div class="method-card">
+            <span class="method-icon">💳</span>
+            <span class="method-name">Банковская карта</span>
+          </div>
+        </label>
+        <label class="payment-method">
+          <input type="radio" name="payment">
+          <div class="method-card">
+            <span class="method-icon">📱</span>
+            <span class="method-name">SBP</span>
+          </div>
+        </label>
+        <label class="payment-method">
+          <input type="radio" name="payment">
+          <div class="method-card">
+            <span class="method-icon">💵</span>
+            <span class="method-name">При получении</span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Step 3: Confirmation -->
+    <div class="step-content" *ngIf="step === 3">
+      <h3 class="step-title">✅ Проверьте заказ</h3>
+      <div class="order-summary">
+        <div class="summary-item">
+          <span>📍 Адрес:</span>
+          <strong>Москва, ул. Пушкина, д. 10</strong>
+        </div>
+        <div class="summary-item">
+          <span>⏰ Время:</span>
+          <strong>30-45 минут</strong>
+        </div>
+        <div class="summary-item">
+          <span>💳 Оплата:</span>
+          <strong>Банковской картой</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Placed -->
+    <div class="step-content success" *ngIf="orderPlaced">
+      <div class="success-icon">🎉</div>
+      <h3 class="success-title">Заказ оформлен!</h3>
+      <p class="success-text">
+        Ваш заказ успешно оформлен. Мы доставим его в течение 30-45 минут.
+      </p>
+      <div class="order-number">
+        Номер заказа: <strong>#X5-{{ randomOrderNumber() }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer" *ngIf="!orderPlaced">
+    <button class="btn-prev" (click)="prevStep()" *ngIf="step > 1">
+      ← Назад
+    </button>
+    <button class="btn-next" (click)="step === 3 ? placeOrder() : nextStep()">
+      {{ step === 3 ? 'Оплатить заказ' : 'Продолжить' }} →
+    </button>
+  </div>
+</div>

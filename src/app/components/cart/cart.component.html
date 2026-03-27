@@ -1,0 +1,78 @@
+<div class="cart-overlay" *ngIf="isOpen" (click)="close()"></div>
+
+<div class="cart" [class.open]="isOpen">
+  <div class="cart-header">
+    <h2 class="cart-title">
+      <span class="cart-icon">🛒</span>
+      Корзина
+    </h2>
+    <button class="close-btn" (click)="close()">
+      <span>✕</span>
+    </button>
+  </div>
+
+  <div class="cart-body">
+    <div class="empty-cart" *ngIf="cartItems.length === 0">
+      <div class="empty-icon">🛒</div>
+      <h3 class="empty-title">Корзина пуста</h3>
+      <p class="empty-text">Добавьте готовые наборы или блюда из каталога</p>
+      <button class="browse-btn" (click)="close()">
+        Перейти к покупкам
+      </button>
+    </div>
+
+    <div class="cart-items" *ngIf="cartItems.length > 0">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <div class="item-image">
+          <span class="item-emoji">{{ getProductImage(item) }}</span>
+          <span class="item-badge" *ngIf="item.isCombo">Комбо</span>
+        </div>
+
+        <div class="item-details">
+          <h4 class="item-name">{{ getProductName(item) }}</h4>
+          <p class="item-price">{{ getProductPrice(item) }} ₽</p>
+        </div>
+
+        <div class="item-quantity">
+          <button class="qty-btn" (click)="updateQuantity(item, -1)">
+            <span>−</span>
+          </button>
+          <span class="qty-value">{{ item.quantity }}</span>
+          <button class="qty-btn" (click)="updateQuantity(item, 1)">
+            <span>+</span>
+          </button>
+        </div>
+
+        <button class="remove-btn" (click)="removeItem(item)">
+          <span>🗑️</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-footer" *ngIf="cartItems.length > 0">
+    <div class="cart-summary">
+      <div class="summary-row">
+        <span class="summary-label">Подытог</span>
+        <span class="summary-value">{{ total }} ₽</span>
+      </div>
+      <div class="summary-row">
+        <span class="summary-label">Доставка</span>
+        <span class="summary-value delivery">Бесплатно</span>
+      </div>
+      <div class="summary-row total">
+        <span class="summary-label">Итого</span>
+        <span class="summary-value">{{ total }} ₽</span>
+      </div>
+    </div>
+
+    <button class="checkout-btn" (click)="checkout()">
+      <span>Оформить заказ</span>
+      <span class="arrow">→</span>
+    </button>
+
+    <p class="delivery-note">
+      🚚 Бесплатная доставка при заказе от 1000 ₽
+    </p>
+  </div>
+</div>

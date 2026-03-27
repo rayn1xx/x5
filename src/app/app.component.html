@@ -1,0 +1,12 @@
+<app-header (cartToggled)="toggleCart()"></app-header>
+<main class="main-content">
+  <app-video-reels (addToCartEvent)="toggleCart()"></app-video-reels>
+  <app-scenario-card></app-scenario-card>
+  <app-combo-sets></app-combo-sets>
+  <app-x5-ready-service></app-x5-ready-service>
+  <app-personalization></app-personalization>
+  <app-subscription></app-subscription>
+</main>
+<app-footer></app-footer>
+<app-cart [isOpen]="isCartOpen" (closeCart)="closeCart()"></app-cart>
+<app-checkout-modal [isOpen]="isCheckoutOpen" (closeCheckout)="closeCheckout()"></app-checkout-modal>

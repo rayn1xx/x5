@@ -1,0 +1,61 @@
+<section class="personalization-section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-icon">✨</span>
+      Персонально для вас
+    </h2>
+    <p class="section-subtitle">Рекомендации на основе ваших предпочтений</p>
+  </div>
+
+  <div class="time-selector">
+    <span class="selector-label">Время суток:</span>
+    <div class="time-buttons">
+      <button
+        class="time-btn"
+        *ngFor="let time of ['morning', 'afternoon', 'evening']"
+        [class.active]="selectedTime === time"
+        (click)="setTimePreference(time)"
+      >
+        <span class="time-icon">{{ getTimeIcon(time) }}</span>
+        <span class="time-text">{{ getTimeLabel(time) }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="recommendations-grid">
+    <div class="recommendation-card" *ngFor="let combo of recommendations">
+      <div class="rec-badge">Рекомендуем</div>
+      <div class="rec-image">
+        <span class="rec-emoji">{{ combo.image }}</span>
+      </div>
+      <div class="rec-content">
+        <h4 class="rec-title">{{ combo.name }}</h4>
+        <p class="rec-description">{{ combo.description }}</p>
+        <div class="rec-footer">
+          <span class="rec-price">{{ combo.price }} ₽</span>
+          <button class="rec-btn">
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="personalization-info">
+    <div class="info-card">
+      <div class="info-icon">🧠</div>
+      <h4>Умные рекомендации</h4>
+      <p>Система учитывает историю просмотров и покупок</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">📊</div>
+      <h4>Анализ предпочтений</h4>
+      <p>Подбираем блюда по вашему вкусу и бюджету</p>
+    </div>
+    <div class="info-card">
+      <div class="info-icon">🎁</div>
+      <h4>Персональные офферы</h4>
+      <p>Специальные предложения только для вас</p>
+    </div>
+  </div>
+</section>

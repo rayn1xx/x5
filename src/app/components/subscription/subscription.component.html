@@ -1,0 +1,75 @@
+<section class="subscription-section" id="subscription">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-icon">📦</span>
+      Подписка на готовую еду
+    </h2>
+    <p class="section-subtitle">Забудьте о готовке и покупках — мы позаботимся о вашем питании</p>
+  </div>
+
+  <div class="subscription-grid">
+    <div
+      class="subscription-card"
+      *ngFor="let sub of subscriptions"
+      [class.popular]="sub.isPopular"
+    >
+      <div class="popular-ribbon" *ngIf="sub.isPopular">
+        <span>🔥</span> Выгодное предложение
+      </div>
+
+      <div class="sub-header">
+        <span class="sub-emoji">{{ sub.image }}</span>
+        <div class="sub-discount">
+          -{{ sub.discount }}%
+        </div>
+      </div>
+
+      <div class="sub-body">
+        <h3 class="sub-name">{{ sub.name }}</h3>
+        <p class="sub-description">{{ sub.description }}</p>
+
+        <div class="sub-price">
+          <span class="price-value">{{ sub.price }} ₽</span>
+          <span class="price-period">/{{ getPeriodLabel(sub.period) }}</span>
+        </div>
+
+        <ul class="sub-features">
+          <li class="feature-item" *ngFor="let feature of sub.features">
+            <span class="feature-check">✓</span>
+            <span class="feature-text">{{ feature }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sub-footer">
+        <button class="subscribe-btn" (click)="subscribe(sub)">
+          Оформить подписку
+        </button>
+        <p class="sub-note">Отмена в любой момент</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="subscription-benefits">
+    <div class="benefit-item">
+      <div class="benefit-icon">💳</div>
+      <h4 class="benefit-title">Экономия до 30%</h4>
+      <p class="benefit-text">Специальные цены для подписчиков</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🚚</div>
+      <h4 class="benefit-title">Бесплатная доставка</h4>
+      <p class="benefit-text">Все доставки включены в стоимость</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🔄</div>
+      <h4 class="benefit-title">Гибкая отмена</h4>
+      <p class="benefit-text">Приостановите или отмените в любое время</p>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">🎯</div>
+      <h4 class="benefit-title">Персонализация</h4>
+      <p class="benefit-text">Меню под ваши предпочтения</p>
+    </div>
+  </div>
+</section>

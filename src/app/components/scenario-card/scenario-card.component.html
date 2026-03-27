@@ -1,0 +1,53 @@
+<section class="scenario-section">
+  <div class="section-header">
+    <h2 class="section-title">
+      <span class="title-icon">🎯</span>
+      Выбери свой сценарий
+    </h2>
+    <p class="section-subtitle">Готовые решения для любой ситуации</p>
+  </div>
+
+  <div class="scenarios-grid">
+    <div class="scenario-card" *ngFor="let combo of comboSets">
+      <div class="card-image">
+        <span class="card-emoji">{{ combo.image }}</span>
+        <div class="popular-badge" *ngIf="combo.isPopular">
+          🔥 Популярное
+        </div>
+        <div class="discount-badge">
+          -{{ combo.discount }}%
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="scenario-tag">
+          <span class="tag-icon">{{ getScenarioIcon(combo.scenario) }}</span>
+          <span>{{ getScenarioTitle(combo.scenario) }}</span>
+        </div>
+
+        <h3 class="card-title">{{ combo.name }}</h3>
+        <p class="card-description">{{ combo.description }}</p>
+
+        <div class="products-preview">
+          <span class="products-label">В наборе:</span>
+          <div class="products-list">
+            <span class="product-item" *ngFor="let product of combo.products">
+              {{ product.image }}
+            </span>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="price-block">
+            <span class="current-price">{{ combo.price }} ₽</span>
+            <span class="old-price">{{ combo.oldPrice }} ₽</span>
+          </div>
+          <button class="add-btn" (click)="addToCart(combo)">
+            <span class="btn-icon">🛒</span>
+            <span>В корзину</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
