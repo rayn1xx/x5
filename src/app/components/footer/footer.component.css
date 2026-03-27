@@ -24,7 +24,7 @@
 }
 
 .logo-x5 {
-  color: #E31E24;
+  color: #00a651;
   font-style: italic;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .social-link:hover {
-  background: #E31E24;
+  background: #00a651;
   transform: translateY(-3px);
 }
 
@@ -87,7 +87,7 @@
 }
 
 .links-column a:hover {
-  color: #E31E24;
+  color: #00a651;
   padding-left: 8px;
 }
 
@@ -127,7 +127,7 @@
 
 .app-btn:hover {
   background: rgba(255, 255, 255, 0.15);
-  border-color: #E31E24;
+  border-color: #00a651;
 }
 
 .app-icon {
@@ -181,7 +181,7 @@
 }
 
 .footer-legal a:hover {
-  color: #E31E24;
+  color: #00a651;
 }
 
 /* Responsive */

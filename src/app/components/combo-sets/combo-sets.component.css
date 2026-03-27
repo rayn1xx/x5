@@ -48,14 +48,14 @@
 
 .combo-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(227, 30, 36, 0.15);
-  border-color: #E31E24;
+  box-shadow: 0 20px 60px rgba(0, 166, 81, 0.15);
+  border-color: #00a651;
 }
 
 .combo-header {
   position: relative;
   height: 180px;
-  background: linear-gradient(135deg, #E31E24 0%, #ff8585 100%);
+  background: linear-gradient(135deg, #00a651 0%, #4ec981 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +186,7 @@
 .final-price {
   font-size: 28px;
   font-weight: 800;
-  color: #E31E24;
+  color: #00a651;
 }
 
 .original-price {
@@ -196,7 +196,7 @@
 }
 
 .buy-btn {
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   border: none;
   color: #fff;
   padding: 14px 28px;
@@ -212,7 +212,7 @@
 
 .buy-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(227, 30, 36, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 166, 81, 0.4);
 }
 
 .arrow {

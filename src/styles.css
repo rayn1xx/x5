@@ -47,23 +47,23 @@ ul, ol {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E31E24;
+  background: #00a651;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c41218;
+  background: #008a42;
 }
 
 /* Selection Styling */
 ::selection {
-  background: #E31E24;
+  background: #00a651;
   color: #fff;
 }
 
 /* Focus Styles */
 :focus-visible {
-  outline: 2px solid #E31E24;
+  outline: 2px solid #00a651;
   outline-offset: 2px;
 }
 
@@ -79,7 +79,7 @@ ul, ol {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

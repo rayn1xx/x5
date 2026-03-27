@@ -47,13 +47,13 @@
 
 .scenario-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(227, 30, 36, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 166, 81, 0.15);
 }
 
 .card-image {
   position: relative;
   height: 200px;
-  background: linear-gradient(135deg, #E31E24 0%, #ff6b6b 100%);
+  background: linear-gradient(135deg, #00a651 0%, #4ec981 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@
   top: 16px;
   left: 16px;
   background: rgba(255, 255, 255, 0.95);
-  color: #E31E24;
+  color: #00a651;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
@@ -99,7 +99,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   color: #fff;
   padding: 6px 14px;
   border-radius: 20px;
@@ -173,7 +173,7 @@
 .current-price {
   font-size: 26px;
   font-weight: 800;
-  color: #E31E24;
+  color: #00a651;
 }
 
 .old-price {
@@ -183,7 +183,7 @@
 }
 
 .add-btn {
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   border: none;
   color: #fff;
   padding: 14px 24px;
@@ -200,7 +200,7 @@
 
 .add-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(227, 30, 36, 0.4);
+  box-shadow: 0 8px 25px rgba(0, 166, 81, 0.4);
 }
 
 .btn-icon {

@@ -68,15 +68,15 @@
 }
 
 .time-btn:hover {
-  border-color: #E31E24;
-  color: #E31E24;
+  border-color: #00a651;
+  color: #00a651;
 }
 
 .time-btn.active {
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
-  border-color: #E31E24;
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
+  border-color: #00a651;
   color: #fff;
-  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 166, 81, 0.3);
 }
 
 .time-icon {
@@ -103,14 +103,14 @@
 
 .recommendation-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 60px rgba(227, 30, 36, 0.15);
+  box-shadow: 0 20px 60px rgba(0, 166, 81, 0.15);
 }
 
 .rec-badge {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   color: #fff;
   padding: 4px 12px;
   border-radius: 15px;
@@ -121,7 +121,7 @@
 
 .rec-image {
   height: 140px;
-  background: linear-gradient(135deg, #E31E24 0%, #ff8585 100%);
+  background: linear-gradient(135deg, #00a651 0%, #4ec981 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,11 +163,11 @@
 .rec-price {
   font-size: 22px;
   font-weight: 700;
-  color: #E31E24;
+  color: #00a651;
 }
 
 .rec-btn {
-  background: linear-gradient(135deg, #E31E24 0%, #c41218 100%);
+  background: linear-gradient(135deg, #00a651 0%, #008a42 100%);
   border: none;
   color: #fff;
   width: 40px;
@@ -183,7 +183,7 @@
 
 .rec-btn:hover {
   transform: scale(1.1) rotate(-45deg);
-  box-shadow: 0 4px 15px rgba(227, 30, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 166, 81, 0.4);
 }
 
 .personalization-info {
