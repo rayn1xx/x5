@@ -8,5 +8,5 @@
   <app-subscription></app-subscription>
 </main>
 <app-footer></app-footer>
-<app-cart [isOpen]="isCartOpen" (closeCart)="closeCart()"></app-cart>
+<app-cart [isOpen]="isCartOpen" (closeCart)="closeCart()" (checkoutRequested)="handleCheckoutRequest()"></app-cart>
 <app-checkout-modal [isOpen]="isCheckoutOpen" (closeCheckout)="closeCheckout()"></app-checkout-modal>

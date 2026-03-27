@@ -10,6 +10,7 @@ import { CartItem } from '../../models/product.model';
 export class CartComponent {
   @Input() isOpen = false;
   @Output() closeCart = new EventEmitter<void>();
+  @Output() checkoutRequested = new EventEmitter<void>();
 
   cartItems: CartItem[] = [];
   total = 0;
@@ -43,8 +44,7 @@ export class CartComponent {
   }
 
   checkout(): void {
-    // Emit event for checkout modal
-    this.close();
+    this.checkoutRequested.emit();
   }
 
   getProductImage(item: CartItem): string {

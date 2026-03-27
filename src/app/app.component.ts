@@ -26,4 +26,8 @@ export class AppComponent {
   closeCheckout(): void {
     this.isCheckoutOpen = false;
   }
+
+  handleCheckoutRequest(): void {
+    this.openCheckout();
+  }
 }
